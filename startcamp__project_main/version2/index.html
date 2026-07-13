@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>최영빈 - 취미 소개</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        body { font-family: 'Pretendard', sans-serif; background-color: #F8FAFC; }
+        .text-main { color: #1E3A5F; }
+        .bg-main { background-color: #1E3A5F; }
+        .text-point { color: #F97316; }
+        .bg-point { background-color: #F97316; }
+        .page { display: none; }
+        .page.active { display: block; }
+    </style>
+</head>
+<body>
+
+    <!-- 네비게이션 -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" onclick="showPage('home')" class="text-xl font-bold text-main">YB.Dev</a>
+            <div class="space-x-6 text-sm font-semibold text-slate-600">
+                <a href="#" onclick="showPage('home')" class="hover:text-point">홈</a>
+                <a href="#" onclick="showPage('about')" class="hover:text-point">소개</a>
+                <a href="#" onclick="showPage('courses')" class="hover:text-point">드라이브 코스</a>
+                <a href="#" onclick="showPage('game')" class="hover:text-point">퀴즈</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 페이지 컨테이너 -->
+    <main id="content" class="min-h-screen">
+        <!-- 홈 페이지 -->
+        <section id="home" class="page active p-10 text-center">
+            <h1 class="text-5xl font-extrabold text-main mb-6">코드는 직진,<br><span class="text-point">드라이브는 와인딩.</span></h1>
+            <div class="max-w-md mx-auto bg-white p-6 rounded-2xl shadow border border-slate-100">
+                <p class="font-bold text-main mb-2">현재 개발 레벨: LV.4 (55%)</p>
+                <div class="w-full bg-slate-200 rounded-full h-3"><div class="bg-point h-3 rounded-full" style="width: 55%"></div></div>
+            </div>
+        </section>
+
+        <!-- 소개 페이지 -->
+        <section id="about" class="page p-10 max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-main mb-8 text-center">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-12">
+                <div class="bg-slate-200 h-64 rounded-2xl flex items-center justify-center overflow-hidden">
+                    <img src="./img/profile_img.jpg" alt="최영빈 프로필" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='[프로필 이미지 경로: ./images/profile.jpg]'">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-main mb-4">최영빈 (Choi Yeongbeen)</h3>
+                    <ul class="space-y-3 text-slate-700">
+                        <li><strong>생년월일:</strong> 2001년 02월 19일</li>
+                        <li><strong>학력:</strong> 인하대학교 정보통신공학과 졸업</li>
+                        <li><strong>취미:</strong> 드라이브</li>
+                    </ul>
+                    <p class="text-lg leading-relaxed mt-6">
+                        안녕하세요! SSAFY에서 치열하게 코딩하며 성장하고 있는 최영빈입니다. 
+                        복잡한 버그를 해결할 때의 쾌감과 구불구불한 와인딩 코너를 매끄럽게 돌아나갈 때의 짜릿함을 사랑합니다.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="bg-white p-8 rounded-2xl shadow border border-slate-100">
+                <h3 class="text-xl font-bold text-[#1E3A5F] mb-6">주요 경력 및 프로젝트</h3>
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="font-bold text-[#F97316]">경력</h4>
+                        <p class="text-slate-700 mt-2">한국철도기술연구원 첨단물류시스템연구실 (인턴, 6개월 근무)</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-[#F97316]">대표 프로젝트</h4>
+                        <ul class="list-disc list-inside space-y-2 text-slate-700 mt-2">
+                            <li>서울시 공공데이터 대상 Text2SQL 모델 개발 (졸업 논문)</li>
+                            <li>택배 송장 OCR 기술 개발 (인턴)</li>
+                            <li>BERT 기반 항만 물류 사고 보고서 요약 시스템 개발 (인턴)</li>
+                            <li>철도 차량 고장 정보 관리 어플리케이션 개발</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 코스 페이지 -->
+        <section id="courses" class="page p-10 max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-main mb-6">Drive Courses</h2>
+            <p class="text-slate-600">나만의 드라이브 코스 리스트입니다.</p>
+            <h3 class="text-2xl font-bold text-slate-700 mb-6 border-l-4 border-point pl-4">와인딩 코스</h3>
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100">
+                    <div class="h-48 bg-slate-200"><img src="./img/bukakskyway.jpg" alt="북악스카이웨이" class="w-full h-full object-cover" onerror="this.style.display='none'"></div>
+                    <div class="p-6"><h4 class="font-bold text-lg">북악스카이웨이(서울시 종로구)</h4><p class="text-slate-600">서울에서 접근성이 좋고 노면이 안정적입니다.</p></div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100">
+                    <div class="h-48 bg-slate-200"><img src="./img/namhansansung.jpg" alt="남한산성" class="w-full h-full object-cover" onerror="this.style.display='none'"></div>
+                    <div class="p-6"><h4 class="font-bold text-lg">남한산성(경기도 광주시)</h4><p class="text-slate-600">근교에서 접근성이 좋은 편이지만 낭떠러지가 있어 운전 시 주의가 필요합니다.</p></div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100">
+                    <div class="h-48 bg-slate-200"><img src="./img/jungmi.jpg" alt="중미산" class="w-full h-full object-cover" onerror="this.style.display='none'"></div>
+                    <div class="p-6"><h4 class="font-bold text-lg">중미산(경기도 양평군)</h4><p class="text-slate-600">서울양평고속도로를 통해 접근하고, 과속 방지턱이 적어 운행하기 쾌적합니다.</p></div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100">
+                    <div class="h-48 bg-slate-200"><img src="./img/hangye.jpg" alt="한계령" class="w-full h-full object-cover" onerror="this.style.display='none'"></div>
+                    <div class="p-6"><h4 class="font-bold text-lg">한계령(강원도 인제군)</h4><p class="text-slate-600">급커브가 심한 편이고 경사가 매우 가파르니 브레이크 열을 관리하면서 주행해야 합니다.</p></div>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-bold text-slate-700 mb-6 border-l-4 border-point pl-4">경치 코스</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100">
+                    <div class="h-48 bg-slate-200"><img src="./img/Gueup.jpg" alt="구읍뱃터" class="w-full h-full object-cover" onerror="this.style.display='none'"></div>
+                    <div class="p-6"><h4 class="font-bold text-lg">구읍뱃터(인천광역시 영종구)</h4><p class="text-slate-600">인천공항 인근이라 접근성이 좋고, 탁 트인 바다 앞에서 디저트를 먹으면 하루의 피로가 사라집니다.</p></div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100">
+                    <div class="h-48 bg-slate-200"><img src="./img/sihwa.jpg" alt="시화나래휴게소" class="w-full h-full object-cover" onerror="this.style.display='none'"></div>
+                    <div class="p-6"><h4 class="font-bold text-lg">시화나래휴게소(경기도 안산시)</h4><p class="text-slate-600">푸른 바다 앞 휴게소이고, 한강 라면 자판기가 있어 바다 앞에서 라면 먹으며 멍때리면 좋습니다.</p></div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100">
+                    <div class="h-48 bg-slate-200"><img src="./img/sapgyo.jpg" alt="삽교호" class="w-full h-full object-cover" onerror="this.style.display='none'"></div>
+                    <div class="p-6"><h4 class="font-bold text-lg">삽교호(충청남도 당진시)</h4><p class="text-slate-600">바다 앞에 놀이공원이 있고, 야경이 멋져서 차 사진을 찍으면 예쁘게 나옵니다.</p></div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 챌린지 페이지 -->
+        <section id="game" class="page p-10 max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-main mb-6">코딩 퀴즈 챌린지</h2>
+            <div id="quiz-container" class="space-y-6">
+                <!-- 퀴즈가 여기에 동적으로 생성됩니다 -->
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const quizData = [
+            { q: "최영빈의 출생연도는?", a: "2001" },
+            { q: "최영빈의 취미는?", a: "드라이브" },
+            { q: "최영빈의 꿈은?", a: "취업" }
+        ];
+
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = quizData.map((item, index) => `
+                <div class="bg-white p-6 rounded-xl shadow border border-slate-100 text-left">
+                    <p class="font-bold text-main mb-4">${index + 1}. ${item.q}</p>
+                    <input type="text" id="ans-${index}" class="w-full p-2 border rounded mb-2" placeholder="정답 입력">
+                    <button onclick="checkAnswer(${index}, '${item.a}')" class="bg-point text-white px-4 py-2 rounded font-bold">확인</button>
+                    <p id="res-${index}" class="mt-2 text-sm font-bold"></p>
+                </div>
+            `).join('');
+        }
+
+        function checkAnswer(index, answer) {
+            const input = document.getElementById(`ans-${index}`).value;
+            const res = document.getElementById(`res-${index}`);
+            if (input === answer) {
+                res.textContent = "정답입니다!";
+                res.className = "mt-2 text-sm font-bold text-green-600";
+            } else {
+                res.textContent = "틀렸습니다. 다시 시도해보세요.";
+                res.className = "mt-2 text-sm font-bold text-red-600";
+            }
+        }
+
+        renderQuiz();
+    </script>
+</body>
+</html>
